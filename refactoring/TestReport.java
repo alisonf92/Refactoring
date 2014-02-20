@@ -20,8 +20,8 @@ public class TestReport extends TestCase {
 	
 	public void testReport() throws Exception {
 		Schedule.deleteAll();
-		Course cs101 = Course.create("CS101", 3);
-		cs101.update();
+		Course cs101 = Persistence.create("CS101", 3);
+		Persistence.update(cs101);
 		Offering off1 = Offering.create(cs101, "M10");
 		off1.update();
 		Offering off2 = Offering.create(cs101, "T9");

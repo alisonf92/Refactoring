@@ -6,7 +6,7 @@ public class Offering {
 	private int id;
 	private Course course;
 	private String daysTimes;
-	static String url = "jdbc:odbc:Reggie";
+	static String url = "jdbc:odbc:Registration";
 	static { 
 		try { 
 			Class.forName("sun.jdbc.odbc.JdbcOdbcDriver"); 
@@ -42,7 +42,7 @@ public class Offering {
 			if (result.next() == false)
 				return null;
 			String courseName = result.getString("Course");
-			Course course = Course.find(courseName);
+			Course course = Persistence.find(courseName);
 			String dateTime = result.getString("DateTime");
 			conn.close();
 			return new Offering(id, course, dateTime);

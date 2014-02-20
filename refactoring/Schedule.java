@@ -12,7 +12,7 @@ public class Schedule {
 	
 	ArrayList<Offering> schedule = new ArrayList<Offering>();
 	
-	static String url = "jdbc:odbc:Reggie";
+	static String url = "jdbc:odbc:Registration";
 	static { 
 		try { 
 			Class.forName("sun.jdbc.odbc.JdbcOdbcDriver"); 
