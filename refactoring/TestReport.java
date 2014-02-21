@@ -11,7 +11,7 @@ public class TestReport extends TestCase {
 	}
 	
 	public void testEmptyReport() throws Exception {
-		Schedule.deleteAll();
+		ScheduleDAO.deleteAll();
 		Report report = new Report();
 		StringBuffer buffer = new StringBuffer();
 		report.write(buffer);
@@ -19,10 +19,10 @@ public class TestReport extends TestCase {
 	}
 	
 	public void testReport() throws Exception {
-		Schedule.deleteAll();
-		Course cs101 = Persistence.create("CS101", 3);
-		Persistence.update(cs101);
-		Offering off1 = Offering.create(cs101, "M10");
+		ScheduleDAO.deleteAll();
+		Course cs101 = CourseDAO.create("CS101", 3);
+		CourseDAO.update(cs101);
+		Offering off1 = OfferingDAO.create(cs101, "M10");
 		off1.update();
 		Offering off2 = Offering.create(cs101, "T9");
 		off2.update();
